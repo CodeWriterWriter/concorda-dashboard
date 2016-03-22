@@ -1,0 +1,142 @@
+/*--------------------------------------------------------------------
+*
+* FORMS
+*
+--------------------------------------------------------------------*/
+
+// Shared
+input, select, textarea
+  border: $ui-border
+  border-radius: $ui-radius
+  padding: $ui-spacing-third
+  transition: all .3s ease-in
+  
+  &:focus
+    border: 1px solid $blue-light
+    box-shadow: 0 0 5px $blue-light
+    outline: none
+
+// Inputs
+input
+  margin-right: $ui-spacing-third
+
+.input-large
+  padding: $ui-spacing-half $ui-spacing-third
+
+.select2-custom
+  width: 100%
+
+.select2
+  margin-bottom:10px
+
+  .select2-selection
+    border: $ui-border
+    border-radius: $ui-radius
+    transition: all .3s ease-in
+
+  .select2-search input{
+    width: auto !important
+  }
+
+  &.select2-container--focus
+
+    .select2-selection
+      border: 1px solid $blue-light
+      box-shadow: 0 0 5px $blue-light
+      outline: none
+
+.select2-dropdown
+  border: 1px solid $blue-light !important
+  border-bottom: 0px !important
+  box-shadow: 0 0 5px $blue-light
+  outline: none
+
+.select2-container .select2-search--inline .select2-search__field
+  margin-bottom: 0px !important
+  margin-top: 0px !important
+
+input[type="checkbox"],
+input[type="radio"]
+  box-sizing: border-box
+  padding: 0
+  width: auto !important
+
+.generic-inputs-list
+  margin-left: $ui-spacing-double
+
+  input[type="radio"]
+    margin-top:3px
+
+  label span,
+  span:not(:last-of-type)
+    margin-right: $ui-spacing-third
+
+// Form panel
+.form-panel
+  padding: $ui-spacing
+  border: $ui-border
+  border-radius: $ui-radius
+  
+// Full width form
+.form-full-width
+
+  input, input[type=search], .btn:not(.btn-secondary), textarea
+    width: 100%
+    margin-bottom: $ui-spacing-third
+
+  .btn-secondary:not(:last-of-type)
+    margin-right: $ui-spacing-third
+
+
+// Selects
+select
+  height: 48px
+  min-width: 150px
+  cursor: pointer
+  background-color: white
+  
+// Search
+.search-input-wrapper
+  position: relative
+
+.search-dropdown
+  // display: none
+
+input[type="search"]
+  width: 100%
+  box-sizing: border-box
+  
+.search-dropdown-active
+  position: absolute
+  top: 100%
+  left: $ui-spacing-third
+  box-shadow: 0 2px 10px $gray-lighter
+  width: 100%
+  //display: block
+  display: none
+  z-index: 20
+  border: $ui-border
+  border-top: 0
+  border-radius: 0 0 3px 3px
+  
+  li
+    background-color: white
+  
+    &:not(:last-child)
+      border-bottom: $ui-border
+  
+  a
+    display: block
+    padding: $ui-spacing-third
+    
+    &:hover
+      background-color: lighten($gray-lighter, 70%)
+
+@media screen and (max-width: 30em)
+
+  input[type=search]
+    margin-bottom: $ui-spacing-third
+    
+  select,
+  input[type=search]
+    width: 100%

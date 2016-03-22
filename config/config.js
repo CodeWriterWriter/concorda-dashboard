@@ -12,7 +12,8 @@ module.exports = function () {
         port: process.env.MAIL_PORT,
         auth: {
           user: process.env.MAIL_USER,
-          pass: process.env.MAIL_PASS
+          pass: process.env.MAIL_PASS,
+          ignoreTLS: true
         }
       }
     }
@@ -56,11 +57,19 @@ module.exports = function () {
     }
   }
 
+  function Concorda () {
+    return {
+      external_api: process.env.EXTERNAL_API || false,
+      external_core: process.env.EXTERNAL_CORE || false
+    }
+  }
+
   return {
-    mailtrap: mailConfig(),
-    googleLogin: googleLoginConfig(),
-    githubLogin: githubLoginConfig(),
-    twitterLogin: twitterLoginConfig(),
-    adminData: adminDataConfig()
+    'mail': mailConfig(),
+    'google-auth': googleLoginConfig(),
+    'github-auth': githubLoginConfig(),
+    'twitter-auth': twitterLoginConfig(),
+    'adminData': adminDataConfig(),
+    'concorda': Concorda()
   }
 }
